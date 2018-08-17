@@ -24,7 +24,7 @@ bot.on ("message", (msg) => {
         
           .then(connection => {
                msg.channel.send('@here เปิดวิทยุ..สถานี RequestRadio.in.th');
-                playradio()
+                playradio(stream)
             })
           .catch(console.log);
       } else {
@@ -33,7 +33,7 @@ bot.on ("message", (msg) => {
      }
                
                
-function playradio(){  
+function playradio(stream){  
 
           const dispatcher = connection.playStream(stream)
                                    
