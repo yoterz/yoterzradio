@@ -1,6 +1,3 @@
-//const ffmpeg = require("ffmpeg-binaries");
-//const opusscript = require("opusscript");
-//const fs = require("fs");
 const ytdl = require('ytdl-core');
 const Discord = require("discord.js")
 const bot = new Discord.Client()
@@ -17,9 +14,7 @@ bot.on("ready",() => {
 
 bot.on ("message", (msg) => {
     if (msg.content === "radio"){
-      // msg.reply('เปิดวิทยุ..');
-      //msg.channel.send('@here เปิดวิทยุ..สถานี RequestRadio.in.th')
-        playradio(stream,"เปิดวิทยุ..สถานี RequestRadio.in.th")
+       playradio(stream,"เปิดวิทยุ..สถานี RequestRadio.in.th")
     }  
 
     if (msg.content === "ใจเย็นเย็น"){
@@ -32,8 +27,7 @@ bot.on ("message", (msg) => {
         if (voiceChannel) {
           voiceChannel.leave()
           sendEmbed("ปิดวิทยุ..")
-          //msg.channel.send('@here ปิดวิทยุ..');
-          //msg.reply('ปิดวิทยุ..');
+          
         }
     }
 
