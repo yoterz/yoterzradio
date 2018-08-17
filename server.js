@@ -63,6 +63,9 @@ if (voiceChannel) {
     
       .then(connection => {
            let stream = ytdl(url, { filter: 'audioonly' });
+             getInfo(url, function(err, info) {
+                console.log(info.title) // "Adele - Hello"
+              });
            let dispatcher = connection.playStream(stream)
            sendEmbed(msgz)
           
