@@ -20,7 +20,7 @@ bot.on ("message", (msg) => {
       msg.channel.send('@here เปิดวิทยุ..สถานี RequestRadio.in.th');
       playradio()
       
-function playradio(stream){        
+function playradio(){        
       var voiceChannel = msg.member.voiceChannel
       if (voiceChannel) {
            voiceChannel.join()
@@ -31,7 +31,7 @@ function playradio(stream){
                dispatcher.on("end", end => {
                         playradio()
                         console.log('เริ่มเล่นใหม่...')
-                 });
+                 })
             })
           .catch(console.log);
       } else {
