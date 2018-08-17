@@ -18,6 +18,7 @@ bot.on ("message", (msg) => {
     if (msg.content === "radio"){
       // msg.reply('เปิดวิทยุ..');
       msg.channel.send('@here เปิดวิทยุ..สถานี RequestRadio.in.th');
+      playradio()
       
 function playradio(stream){        
       var voiceChannel = msg.member.voiceChannel
