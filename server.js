@@ -28,7 +28,6 @@ bot.on ("message", (msg) => {
             const dispatcher = connection.playStream(stream)
                                    
           dispatcher.on("end", end => {
-              var stream = 'http://27.254.142.208:8100/stream'
                   connection.playStream(stream)
                   console.log('เริ่มเล่นใหม่...')
             });
