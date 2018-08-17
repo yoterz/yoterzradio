@@ -25,10 +25,12 @@ bot.on ("message", (msg) => {
              var stream = 'http://27.254.142.208:8100/stream'
              // var stream = ytdl('https://www.youtube.com/watch?v=JGwWNGJdvx8',{ filter: 'audioonly' })
              // var stream = '/home/discord/audio.mp3'
-            const dispatcher = connection.playStream(stream);
+            const dispatcher = connection.playStream(stream)
                                    
           dispatcher.on("end", end => {
-                 voiceChannel.leave();
+              var stream = 'http://27.254.142.208:8100/stream'
+                  connection.playStream(stream)
+                  console.log('เริ่มเล่นใหม่...')
             });
                 
           })
