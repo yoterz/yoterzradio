@@ -13,7 +13,8 @@ bot.on("ready",() => {
 
 bot.on ("message", (msg) => {
     if (msg.content === "radio"){
-     
+      // msg.reply('เปิดวิทยุ..');
+       msg.channel.send('@here เปิดวิทยุ..สถานี RequestRadio.in.th');
         playradio()
         
 function playradio(){  
@@ -22,8 +23,7 @@ function playradio(){
             voiceChannel.join()
         
           .then(connection => {
-           // msg.reply('เปิดวิทยุ..');
-              msg.channel.send('@here เปิดวิทยุ..สถานี RequestRadio.in.th');
+          
                 
              var stream = 'http://27.254.142.208:8100/stream'
              // var stream = ytdl('https://www.youtube.com/watch?v=JGwWNGJdvx8',{ filter: 'audioonly' })
