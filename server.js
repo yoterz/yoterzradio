@@ -13,7 +13,10 @@ bot.on("ready",() => {
 
 bot.on ("message", (msg) => {
     if (msg.content === "radio"){
-      //console.log(msg.member.voiceChannel)
+     
+        playradio()
+        
+function playradio(){  
       var voiceChannel = msg.member.voiceChannel
       if (voiceChannel) {
             voiceChannel.join()
@@ -28,7 +31,7 @@ bot.on ("message", (msg) => {
             const dispatcher = connection.playStream(stream)
                                    
           dispatcher.on("end", end => {
-                  connection.playStream(stream)
+                  playradio()
                   console.log('เริ่มเล่นใหม่...')
             });
                 
@@ -38,7 +41,7 @@ bot.on ("message", (msg) => {
         msg.reply('คุณไม่ได้อยู่ในห้อง Voice Channel');
       }
      }
-  
+}
     if (msg.content ==="end"){
           var voiceChannel = msg.member.voiceChannel
         if (voiceChannel) {
