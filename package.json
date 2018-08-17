@@ -1,0 +1,16 @@
+{
+  "name": "Supermarioz",
+  "version": "0.0.1",
+  "description": "Node app running.",
+  "dependencies": {
+    "discord.js": "^11.4.2",
+    "ffmpeg-binaries": "^4.0.0",
+    "node-opus": "^0.2.7",
+    "opusscript": "0.0.6",
+    "request": "^2.88.0",
+    "ytdl-core": "^0.24.0"
+  },
+  "scripts": {
+    "start": "node server.js"
+  }
+}
