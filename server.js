@@ -17,33 +17,29 @@ bot.on("ready",() => {
 bot.on ("message", (msg) => {
     if (msg.content === "radio"){
       // msg.reply('เปิดวิทยุ..');
-       
+      msg.channel.send('@here เปิดวิทยุ..สถานี RequestRadio.in.th');
+      
+function playradio(stream){        
       var voiceChannel = msg.member.voiceChannel
       if (voiceChannel) {
            voiceChannel.join()
         
           .then(connection => {
-               msg.channel.send('@here เปิดวิทยุ..สถานี RequestRadio.in.th');
-                playradio(stream)
+               const dispatcher = connection.playStream(stream)
+               
+               dispatcher.on("end", end => {
+                        playradio()
+                        console.log('เริ่มเล่นใหม่...')
+                 });
             })
           .catch(console.log);
       } else {
         msg.reply('คุณไม่ได้อยู่ในห้อง Voice Channel');
       }
      }
-               
-               
-function playradio(stream){  
-
-          const dispatcher = connection.playStream(stream)
-                                   
-                 dispatcher.on("end", end => {
-                        playradio()
-                        console.log('เริ่มเล่นใหม่...')
-                 });
-                
-          
+        
 }
+        
     if (msg.content ==="end"){
           var voiceChannel = msg.member.voiceChannel
         if (voiceChannel) {
