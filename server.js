@@ -3,14 +3,12 @@ const translate = require('translate-google')
 
 var bot = new Discord.Client()
 
-var channelName = "general"
-var channelID = '574551663474507777'
 
 
 
 bot.on("ready",function(){
     console.log('List GUilds : '+bot.guilds.array())
-    console.log('Name Channel : '+channelName)
+    
     console.log("Ready.....................")
 })
 
@@ -21,8 +19,8 @@ bot.on("message", (msg) => {
 
   
      
-  if (msg.content.startsWith("!")){
-       if (msg.channel.id === channelID){ 
+    if (msg.content.startsWith("!")){
+      
         text = msg.content.slice(1).split('$')
   
                       translate(text, {to: 'en'}).then(engtext => {
@@ -39,12 +37,7 @@ bot.on("message", (msg) => {
 
                       }).catch(err => {console.error(err)})
 
-                      
 
-                      
-                      
-        
-        }
     }   
 
 
