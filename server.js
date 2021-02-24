@@ -1,5 +1,5 @@
 const Discord = require("discord.js")
-const translate = require('translate-google')
+const translate = require("translate")
 
 var bot = new Discord.Client()
 
