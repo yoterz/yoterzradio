@@ -7,6 +7,7 @@
     "@google-cloud/vision": "^1.7.2",
     "discord.js": "^11.5.1",
     "google-translate-api": "^2.3.0",
+    "google-translate-token": "^1.0.0",
     "node-tesseract": "^0.2.7",
     "node-tesseract-ocr": "^1.0.0",
     "request": "^2.88.0",
