@@ -24,17 +24,17 @@ bot.on("message", (msg) => {
         text = msg.content.slice(1).split('$')
         console.log("ข้อความ : "+text)
   
-                      translate(text, {to: 'en'}).then(eng => {
+                      translate(text, {to: 'en'}).then(engtext => {
                           
-                            //translate(text, {to: 'th'}).then(thtext => {
+                            translate(text, {to: 'th'}).then(thtext => {
                              
-                                 // translate(text, {to: 'ko'}).then(kotext => {
+                                  translate(text, {to: 'ko'}).then(kotext => {
 
-                                       msg.channel.send("```\n"+eng.text+"\n"+thtext+"\n"+kotext+"```")
+                                       msg.channel.send("```\n"+engtext+"\n"+thtext+"\n"+kotext+"```")
 
-                                 // }).catch(err => { console.error(err)})
+                                  }).catch(err => { console.error(err)})
 
-                           // }).catch(err => {console.error(err)})
+                            }).catch(err => {console.error(err)})
 
                       }).catch(err => {console.error(err)})
 
