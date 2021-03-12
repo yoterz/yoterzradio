@@ -22,6 +22,7 @@ bot.on("message", (msg) => {
     if (msg.content.startsWith("!")){
       
         text = msg.content.slice(1).split('$')
+        console.log("ข้อความ : "+text)
   
                       translate(text, {to: 'en'}).then(eng => {
                           
